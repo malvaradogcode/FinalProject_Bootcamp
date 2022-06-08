@@ -14,8 +14,8 @@ class TottusSpider(CrawlSpider):
     start_urls = ['https://www.tottus.com.pe/buscar?q=electrodomesticos']
 
     rules = (
-        Rule(LinkExtractor(allow='/p/'), follow=True),
-        Rule(LinkExtractor(allow='&page='), callback='parse_filter', follow=True),
+        #Rule(LinkExtractor(allow='/p/'), follow=True),
+        Rule(LinkExtractor(allow='/p/'), callback='parse_filter', follow=True),
     )
 
     def parse_filter(self, response):
